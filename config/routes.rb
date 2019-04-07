@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     get'/expenses' => 'expenses#index'
     post '/expenses' => 'expenses#create'
     get '/expenses/:id' => 'expenses#show'
+    patch '/expenses/:id' => 'expenses#update'
 
     
   end

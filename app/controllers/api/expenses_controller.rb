@@ -24,4 +24,18 @@ class Api::ExpensesController < ApplicationController
     @expense = Expense.find_by(id: expense_id)
     render 'show.json.jbuilder'
   end
+
+  def update
+    expense_id = params[:id]
+    @expense = Expense.find_by(id: expense_id)
+    @expense.name = params[:name] || @expense.name
+    @expense.amount = params[:amount] || @expense.amount
+    @expense.notes = params[:notes] || @expense.notes
+    @expense.date = params[:date] || @expense.date
+    if @expense.save
+      render 'show.json.jbuilder'
+    else
+      render :json => { errors => @expense.errors.full_messages }
+    end
+  end
 end
