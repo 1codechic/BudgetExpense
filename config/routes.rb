@@ -10,6 +10,15 @@ Rails.application.routes.draw do
 
 
     post '/sessions' => 'sessions#create'
+
+    get '/categories' => 'categories#index'
+    post '/categories' => 'categories#create'
+    get '/categories/:id' => 'categories#show'
+
+    get'/expenses' => 'expenses#index'
+    post '/expenses' => 'expenses#create'
+    get '/expenses/:id' => 'expenses#show'
+
     
   end
 end
