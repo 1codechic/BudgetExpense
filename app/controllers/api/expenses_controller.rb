@@ -38,4 +38,12 @@ class Api::ExpensesController < ApplicationController
       render :json => { errors => @expense.errors.full_messages }
     end
   end
+
+  def destroy
+    expense_id = params[:id]
+    @expense = Expense.findy_by(id: expense_id)
+    @expense.destroy
+    render 'show.json.jbuilder'
+  end
+  
 end

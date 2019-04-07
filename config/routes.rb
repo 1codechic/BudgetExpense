@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     post '/expenses' => 'expenses#create'
     get '/expenses/:id' => 'expenses#show'
     patch '/expenses/:id' => 'expenses#update'
+    delete '/expenses/:id' => 'expenses#destroy'
 
     
   end
