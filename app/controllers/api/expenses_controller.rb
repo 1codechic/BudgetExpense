@@ -10,7 +10,8 @@ class Api::ExpensesController < ApplicationController
       name: params[:name],
       amount: params[:amount],
       notes: params[:notes],
-      date: params[:date]
+      date: params[:date],
+      category: params[:category_id]
     })
     if @expense.save
       render 'show.json.jbuilder'
